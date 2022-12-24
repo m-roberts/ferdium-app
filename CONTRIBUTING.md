@@ -73,19 +73,21 @@ _Note:_ You can choose any version manager to manage multiple versions of `node`
 
 The version [2.23.0](https://git-scm.com/download) for Git is working fine for development. You can then use the console from Git to do the development procedure.
 
-#### On Debian/Ubuntu
+#### Additional Linux dependencies
+
+##### Debian/Ubuntu
 
 ```bash
 apt-get update -y && apt-get install --no-install-recommends -y rpm ruby gem && gem install fpm --no-ri --no-rdoc --no-document
 ```
 
-#### On Fedora
+#### Fedora
 
 ```bash
 dnf install libX11-devel libXext-devel libXScrnSaver-devel libxkbfile-devel rpm
 ```
 
-#### On Windows
+#### Additional Windows dependencies
 
 Please make sure you have the following installed:
 
@@ -99,14 +101,15 @@ cd ferdium-app
 git submodule update --init --recursive --remote --rebase --force
 ```
 
-It is important you execute the last command to get the required submodule (`ferdium-recipes`).
+For working on `develop`, it is important that you execute the last command to get the required submodule (`ferdium-recipes`).
+Otherwise, `git submodule update --init --recursive` is probably what you want.
 
-### Run the script
+### Run the build script
 
-Run the following script to install all dependencies, and build Ferdium.
+Run the following script to install all project-level dependencies, and build Ferdium.
 
 ```bash
-# On Unix
+# On Unix (Linux, Mac)
 ./scripts/build-unix.sh
 
 # On Windows Powershell
